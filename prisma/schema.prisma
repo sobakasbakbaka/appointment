@@ -16,8 +16,8 @@ datasource db {
 model Client {
   id       Int        @id @default(autoincrement())
   name     String
-  phone    String
-  birthday DateTime
+  phone    String     @unique
+  birthday DateTime?
   whatsapp String?
   telegram String?
   sessions Sessions[]
