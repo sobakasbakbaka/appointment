@@ -15,6 +15,11 @@ import { UpdateClientDto } from './dto/update-client.dto';
 export class ClientController {
   constructor(private readonly clientService: ClientService) {}
 
+  @Get()
+  async getAllClients() {
+    return this.clientService.getAllClients();
+  }
+
   @Post()
   async create(@Body() createClientDto: CreateClientDto) {
     return this.clientService.createClient(createClientDto);
