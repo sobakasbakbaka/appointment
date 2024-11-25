@@ -9,5 +9,5 @@ export class UpdateScheduleDto {
 
   @IsOptional()
   @IsNumber()
-  scheduleId?: number; // ID существующего расписания для обновления
+  scheduleId?: number;
 }
