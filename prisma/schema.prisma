@@ -51,6 +51,8 @@ model Schedule {
   master        Master   @relation(fields: [masterId], references: [id])
   workStartTime DateTime
   workEndTime   DateTime
+
+  @@unique([masterId, workStartTime])
 }
 
 enum SessionStatus {
