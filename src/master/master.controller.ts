@@ -7,14 +7,17 @@ import {
   Patch,
   Post,
   Put,
+  UseGuards,
 } from '@nestjs/common';
 import { MasterService } from './master.service';
 import { CreateMasterDto } from './dto/create-master.dto';
 import { UpdateScheduleDto } from './dto/update-schedule.dto';
 import { UpdateMasterDto } from './dto/update-master.dto';
 import { CreateScheduleDto } from './dto/create-schedule.dto';
+import { AuthGuard } from '@nestjs/passport';
 
 @Controller('master')
+@UseGuards(AuthGuard('jwt'))
 export class MasterController {
   constructor(private readonly masterService: MasterService) {}
 
