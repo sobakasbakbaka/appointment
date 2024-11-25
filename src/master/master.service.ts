@@ -30,6 +30,7 @@ export class MasterService {
   async getMaster(id: number) {
     return this.prisma.master.findUnique({
       where: { id },
+      include: { schedules: true },
     });
   }
 
